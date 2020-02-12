@@ -105,12 +105,8 @@ body {
     }
   }
 
-  .top {
-    height: calc(100% - 36px);
-
-    .app-center {
-      height: 100%;
-    }
+  .top, .new{
+    @include mainBox();
   }
 
   @media screen and (max-width: 1440px) {

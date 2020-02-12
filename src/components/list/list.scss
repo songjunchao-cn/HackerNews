@@ -1,0 +1,89 @@
+@mixin center ($width, $height) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -$width/2;
+    margin-top: -$height/2;
+}
+.wrap {
+    background: #FFFFFF;
+    height: 150px;
+    display: i;
+    .flex-content{
+      height: 99%;
+      display: flex;
+      justify-content:flex-start;
+      .left{
+        flex-basis:112px;
+        .score-img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #F0F0F0;
+            position: relative;
+            left: 50%;
+            margin-left: -20px;
+            margin-top: 36px;
+            img{
+                width: 16.09px;
+                height: 16.09px;
+                @include center(16.09px, 16.09px);
+            }
+        }
+        .score{
+            font-size: 18px;
+            color: #E07628;
+            padding-top: 16px;
+        }
+      }
+      .middle{
+        font-size:14px;
+        text-align: left;
+        padding: 22px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+          .title{
+            color: #222222;
+            font-weight:bold;
+          }
+          .url{
+            color:#999999
+          }
+          .comment{
+            // font-size: 12px;
+            color: #999999;
+            display: flex;
+            justify-content: space-between;
+            width: 168px;
+            .user{
+                margin-left: 16px;
+               color: #999999;
+            }
+            .msg{
+                margin-left: 16px;
+               color:#E07628
+            }
+            img{
+                width:16px;
+                height: 16px;
+            }
+          }
+      }
+      .right{
+          flex-basis: 119px;
+          font-size: 12px;
+          color: #999999;
+          margin:32.5px 0 0 46px;
+      }
+    }
+}
+
+.line {
+    width: calc(100% - 4%);
+    margin: 0 auto;
+    height: 1px;
+    background: #DFE1E8;
+    position: relative;
+    bottom: 0;
+}

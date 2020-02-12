@@ -3,6 +3,7 @@
     <Header @changeTab="changeTab" />
     <div class="tip"><span>{{tipValue}}</span></div>
     <router-view></router-view>
+    <footer> Copyright@2019 ByteArk</footer>
   </div>
 </template>
 
@@ -43,5 +44,13 @@ export default {
   span{
     padding-left: 32px;
   }
+}
+footer{
+ height:105px;
+ background: #ffffff;
+ margin-top: 28px;
+ line-height: 105px;
+ font-size: 12px;
+ color: #83838E;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <article class="wrap" v-for="item in $attrs.listData" :key="item.id">
+    <article class="wrap" v-for="(item, index) in $attrs.listData" :key="item.id">
       <div class="flex-content">
         <div class="left">
           <div class="score-img">
@@ -28,7 +28,7 @@
           {{$dateFormat(item.time,'yyyy:MM:dd  hh:mm:ss') }}
         </div>
       </div>
-      <div class="line"></div>
+      <div class="line" v-if="$attrs.listData.length!==index + 1">{{$attrs.listData.length}}</div>
     </article>
   </div>
 </template>

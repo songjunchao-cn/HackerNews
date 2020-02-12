@@ -50,15 +50,17 @@ body {
 
 #app {
   height: 100%;
-
   .root {
     width: 100vw;
     height: 100%;
     position: relative;
     background-color: $main_bg;
-    overflow: hidden;
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
   }
-
+  .root::-webkit-scrollbar {
+    display: none;
+  }
   header {
     width: 100%;
     background-color: #fff;

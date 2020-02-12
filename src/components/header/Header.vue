@@ -9,7 +9,7 @@
           :class="{'nav-index': item.text === tabName}"
           v-for="item in nav"
           :key="item.herf"
-          @click="changeTab(item.herf)"
+          @click="changeTab(item)"
         >{{item.text}}</a>
       </nav>
     </div>
@@ -38,9 +38,8 @@ export default {
     }
   },
   methods: {
-    changeTab (herf) {
-      this.$router.push(herf)
-      console.log(this.$route.name)
+    changeTab (item) {
+      this.$router.push(item.herf)
     }
   }
 }

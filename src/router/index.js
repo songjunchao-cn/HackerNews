@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Top from '@/views/top/Top.vue'
-const Root = () => import('@/views/root/root')
+import Root from '@/views/root/root'
+const Top = () => import('@/views/top/Top.vue')
 const New =() => import('@/views/new/New.vue')
 
 Vue.use(VueRouter)

@@ -1,6 +1,6 @@
 <template>
   <div class="top">
-    <List/>
+    <List :listData = 'listData'/>
   </div>
 </template>
 
@@ -13,6 +13,11 @@ export default {
   components: {
     List
   },
+  data(){
+    return{
+      listData:[]
+    }
+  },
   created(){
     this.getList()
   },
@@ -20,7 +25,7 @@ export default {
   },
   methods:{
    async getList(){
-      let params = {query:"{stories(type: new) {id title time url by score descendants}}"}
+      let params = {query:"{stories(type: top) {id title time url by score descendants}}"}
       let { data } = await this.$api.getListApi(params)
       this.listData = data.data.stories
     }

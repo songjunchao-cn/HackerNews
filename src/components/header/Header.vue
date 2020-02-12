@@ -40,6 +40,7 @@ export default {
   methods: {
     changeTab (item) {
       this.$router.push(item.herf)
+      this.$emit('changeTab',item.text.toLowerCase())
     }
   }
 }

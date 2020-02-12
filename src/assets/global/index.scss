@@ -1,0 +1,124 @@
+@charset "utf-8";
+@import './color.scss';
+$color_black:#111111;
+$big_size:18px;
+$radius:18px;
+
+@mixin mainBox {
+  width: calc(100% - 9.4%);
+  margin: 0 auto;
+  position: relative;
+}
+
+@mixin box {
+  box-sizing: border-box;
+}
+
+@mixin after ($both) {
+  content: '';
+  display: block;
+
+  @if $both==both {
+    clear: both;
+  }
+}
+
+@mixin center ($width, $height) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -$width/2;
+  margin-top: -$height/2;
+}
+
+html {
+  font-size: 18px;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-center {
+  @include mainBox();
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+
+  .root {
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    background-color: $main_bg;
+    overflow: hidden;
+  }
+
+  header {
+    width: 100%;
+    background-color: #fff;
+    height: 80px;
+
+    nav {
+      height: 100%;
+      text-align: left;
+      &::after {
+        @include after(both)
+      }
+
+      span {
+        vertical-align: middle;
+        padding-right: 12px;
+      }
+    }
+    .nav span~a {
+      font-weight: bolder;
+      color: $gray_font;
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+      padding: 0 10px;
+      cursor: pointer;
+      line-height: 80px;
+      font-size: 14px;
+      &:hover {
+        color: $black_font;
+        text-decoration: none;
+      }
+    }
+
+    .nav a.nav-index {
+      color: $black_font;
+    }
+  }
+  .top {
+    height: calc(100% - 36px);
+    .app-center {
+      height: 100%;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    html{
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 960px) {
+    .app-center{
+        width: calc(100% - 80px);
+    }
+    html{
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .app-center{
+        width: calc(100% - 60px);
+    }
+  }
+}

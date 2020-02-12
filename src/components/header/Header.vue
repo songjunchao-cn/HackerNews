@@ -1,16 +1,18 @@
 <template>
   <header>
-    <nav class="nav">
+    <div class="app-center">
+      <nav class="nav">
         <span>
-          <img :src="$imgUrls.Images.logo" alt />
+          <img :src="$imgUrls.images.logo" alt />
         </span>
         <a
-          :class="{'nav-index': item.name === tabName}"
+          :class="{'nav-index': item.text === tabName}"
           v-for="item in nav"
           :key="item.herf"
           @click="changeTab(item.herf)"
         >{{item.text}}</a>
       </nav>
+    </div>
   </header>
 </template>
 
@@ -20,23 +22,29 @@ export default {
   data () {
     return {
       nav: [
-        {  name: 'news', text: 'Top', herf: '/top' },
-        {  name: 'blog', text: 'News', herf: '/news' },
-      ],
+        {  text: 'Top', herf: '/top' },
+        {  text: 'New', herf: '/new' },
+      ]
     }
   },
-  created () { },
+  created () { 
+  },
   beforeMount () { },
   mounted () {
+  },
+  computed: {
+    tabName () {
+      return this.$route.name
+    }
   },
   methods: {
     changeTab (herf) {
       this.$router.push(herf)
+      console.log(this.$route.name)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 </style>

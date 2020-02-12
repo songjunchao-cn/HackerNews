@@ -1,19 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Top from '@/views/top/Top.vue'
+const Root = () => import('@/views/root/root')
+const New =() => import('@/views/new/New.vue')
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Top',
-    component: Top
-  },
-  {
-    path: '/news',
-    name: 'News',
-    component: () => import('@/views/news/News.vue')
+    name: 'Root',
+    component: Root,
+    children: [
+      {
+        path: '/top',
+        component: Top,
+        name: 'Top',
+        alias: '/'
+      },
+      {
+        path: '/new',
+        name: 'New',
+        component: New,
+      },
+      // {
+      //   path: '*',
+      //   component: notFind,
+      //   name: 'notFind'
+      // }
+    ]
   }
 ]
 

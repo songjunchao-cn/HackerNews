@@ -67,25 +67,33 @@ body {
     nav {
       height: 100%;
       text-align: left;
+
       &::after {
         @include after(both)
       }
 
       span {
         vertical-align: middle;
-        padding-right: 12px;
+        padding-right: 63px;
+
+        img {
+          width: 146px;
+          height: 43.22px
+        }
       }
     }
+
     .nav span~a {
       font-weight: bolder;
       color: $gray_font;
       position: relative;
       z-index: 1;
       box-sizing: border-box;
-      padding: 0 10px;
+      padding-right: 40px;
       cursor: pointer;
       line-height: 80px;
       font-size: 14px;
+
       &:hover {
         color: $black_font;
         text-decoration: none;
@@ -96,29 +104,34 @@ body {
       color: $black_font;
     }
   }
+
   .top {
     height: calc(100% - 36px);
+
     .app-center {
       height: 100%;
     }
   }
+
   @media screen and (max-width: 1440px) {
-    html{
+    html {
       font-size: 16px;
     }
   }
-  
+
   @media screen and (max-width: 960px) {
-    .app-center{
-        width: calc(100% - 80px);
+    .app-center {
+      width: calc(100% - 80px);
     }
-    html{
+
+    html {
       font-size: 14px;
     }
   }
+
   @media screen and (max-width: 768px) {
-    .app-center{
-        width: calc(100% - 60px);
+    .app-center {
+      width: calc(100% - 60px);
     }
   }
 }

@@ -1,0 +1,75 @@
+.paging {
+    display: inline-block;
+    width: calc(100%);
+    height: 64px;
+    background: #ffffff;
+    line-height: 64px;
+    text-align: right;
+    margin-top: 20px;
+
+    .paging-item {
+        display: inline;
+        font-size: 12px;
+        position: relative;
+        padding: 6px 12px;
+        line-height: 26px;
+        text-decoration: none;
+        margin-left: -1px;
+        cursor: pointer;
+        color: #999999;
+
+        img {
+            width: 5.71px;
+            height: 10.17px;
+        }
+
+        &:last-child {
+            margin-right: 32px;
+        }
+
+        &:hover {
+            color: #e07628;
+        }
+    }
+
+    .paging-item-more {
+        span {
+            position: relative;
+
+            &::after {
+                content: "...";
+                position: absolute;
+                top: -10px;
+                left: -5px;
+            }
+        }
+
+        &:hover {
+            color: #999999;
+        }
+    }
+
+    .paging-item-disabled {
+        background-color: #fff;
+        color: #505050;
+        line-height: 30px;
+    }
+
+    //禁用
+    .paging-item-disabled {
+        cursor: not-allowed;
+        opacity: 0.75;
+    }
+
+    .paging-item-more,
+    .paging-item-current {
+        cursor: default;
+    }
+
+    //选中
+    .paging-item-current {
+        color: #e07628;
+        position: relative;
+        z-index: 1;
+    }
+}
